@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f8f6f1" />
+    <meta name="description" content="Sign in or request a customer account at Shine with mine, GPO Town." />
+    <title>Sign in — Shine with mine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="login.js" defer></script>
+  </head>
+  <body class="auth-page">
+    <main class="auth-layout">
+      <section class="auth-art" aria-label="Shine with mine jewelry">
+        <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1600&q=88" alt="Gold jewelry arranged in warm natural light" />
+        <a class="auth-brand" href="index.html"><span class="wordmark shine-wordmark">SHINE <span>with mine</span></span></a>
+        <div class="auth-art-copy"><p class="eyebrow">A little shine goes a long way</p><h1>Your everyday,<br />a little more <em>you.</em></h1><p>Sign in to keep your favorites close and stay up to date with your account.</p></div>
+      </section>
+      <section class="auth-panel" aria-labelledby="auth-title">
+        <div class="auth-topline">
+          <a class="auth-mobile-brand" href="index.html"><span class="wordmark shine-wordmark">SHINE <span>with mine</span></span></a>
+          <a class="auth-back" href="index.html">← Back to the shop</a>
+        </div>
+        <div class="auth-heading"><p class="eyebrow">GPO Town · Shine with mine</p><h2 id="auth-title">Welcome <em>back.</em></h2><p id="auth-subtitle">Sign in to your account to pick up where you left off.</p></div>
+        <div class="auth-tabs" role="tablist" aria-label="Account access">
+          <button class="auth-tab" id="signin-tab" type="button" role="tab" aria-selected="true" aria-controls="auth-form" data-mode="login">Sign in</button>
+          <button class="auth-tab" id="register-tab" type="button" role="tab" aria-selected="false" aria-controls="auth-form" data-mode="register">Create account</button>
+        </div>
+        <form class="auth-form" id="auth-form" novalidate>
+          <div class="auth-field" id="name-field" hidden><label for="full-name">Your name</label><input id="full-name" name="fullName" type="text" autocomplete="name" maxlength="100" placeholder="Full name" /></div>
+          <div class="auth-field"><label for="identifier" id="identifier-label">Username or email</label><input id="identifier" name="identifier" type="text" autocomplete="username" required maxlength="254" placeholder="Username or email address" /></div>
+          <div class="auth-field" id="email-field" hidden><label for="register-email">Email address</label><input id="register-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="you@example.com" /></div>
+          <div class="auth-field"><label for="password">Password</label><div class="password-wrap"><input id="password" name="password" type="password" autocomplete="current-password" required maxlength="128" placeholder="Enter your password" /><button class="password-toggle" id="password-toggle" type="button" aria-label="Show password">Show</button></div><p class="password-help" id="password-help" hidden>Use at least 12 characters. Never reuse a password from another site.</p></div>
+          <div class="auth-options" id="login-options"><label class="remember-me"><input type="checkbox" id="remember" /> Keep me signed in</label><button class="auth-quiet-link" id="forgot-password" type="button">Forgot password?</button></div>
+          <p class="auth-message" id="auth-message" role="alert" aria-live="assertive" hidden></p>
+          <button class="button button-dark auth-submit" id="auth-submit" type="submit">Sign in <span aria-hidden="true">→</span></button>
+        </form>
+        <p class="auth-approval-note" id="approval-note">New customer accounts are reviewed by the shop admin before access is enabled. Account roles are assigned by the server, not chosen here.</p>
+        <div class="auth-bottom"><a href="mailto:ochiengreagan244@gmail.com">ochiengreagan244@gmail.com</a><a href="tel:+254710350379">0710 350 379</a><a href="admin.html">Admin sign-in</a></div>
+      </section>
+    </main>
+  </body>
+</html>

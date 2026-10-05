@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f8f6f1" />
+    <meta name="description" content="Private shop administration for Shine with mine." />
+    <title>Shop admin — Shine with mine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="admin.js" defer></script>
+  </head>
+  <body class="admin-page">
+    <header class="admin-topbar"><a class="wordmark shine-wordmark" href="index.html">SHINE <span>with mine</span></a><div class="admin-topbar-actions"><a class="auth-back" href="index.html">View shop ↗</a><button class="auth-quiet-link" id="admin-signout" type="button" hidden>Sign out</button></div></header>
+    <main class="admin-content">
+      <section class="admin-greeting"><div><p class="eyebrow">Shop control · GPO Town</p><h1>Admin workspace</h1><p>Review account requests and inventory movements.</p></div></section>
+      <p class="admin-status" id="admin-status" role="status" aria-live="polite">Verifying your admin session…</p>
+      <section class="access-denied" id="access-denied" hidden><h1>Admin access only</h1><p>This workspace is private. Sign in with an approved admin account to manage shop activity.</p><a class="button button-dark" href="login.html">Go to sign in <span aria-hidden="true">→</span></a></section>
+      <div class="admin-workspace" id="admin-workspace" hidden>
+        <section class="admin-stats" aria-label="Shop summary">
+          <article class="admin-stat"><span>Account requests</span><strong id="account-count">—</strong></article>
+          <article class="admin-stat"><span>Movement requests</span><strong id="movement-count">—</strong></article>
+          <article class="admin-stat"><span>Inventory items</span><strong id="inventory-count">—</strong></article>
+        </section>
+        <section class="admin-section" aria-labelledby="inventory-title"><div class="admin-section-heading"><div><h2 id="inventory-title">Inventory</h2><p>Add a piece or correct its on-hand count. Customer stock movements still require your approval.</p></div></div><form class="inventory-form" id="inventory-form"><label for="inventory-name">Item name</label><input id="inventory-name" name="itemName" type="text" maxlength="100" required placeholder="e.g. Gold hoops" /><label for="inventory-quantity">On-hand quantity</label><input id="inventory-quantity" name="quantity" type="number" min="0" max="100000" step="1" required value="0" /><button class="button button-dark" type="submit">Save inventory <span aria-hidden="true">→</span></button></form><div class="admin-table-wrap inventory-table-wrap"><table class="admin-table"><thead><tr><th>Item</th><th>On hand</th><th>Last updated</th></tr></thead><tbody id="inventory-items"><tr><td class="admin-empty" colspan="3">Loading inventory…</td></tr></tbody></table></div></section>
+        <section class="admin-section" aria-labelledby="accounts-title"><div class="admin-section-heading"><div><h2 id="accounts-title">Account approvals</h2><p>Approve customer access. Admin privileges can only be assigned by the server owner.</p></div></div><div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Name</th><th>Email</th><th>Requested</th><th>Decision</th></tr></thead><tbody id="account-requests"><tr><td class="admin-empty" colspan="4">Loading requests…</td></tr></tbody></table></div></section>
+        <section class="admin-section" aria-labelledby="movements-title"><div class="admin-section-heading"><div><h2 id="movements-title">Inventory movements</h2><p>Every stock change waits for your approval and is recorded with an audit trail.</p></div></div><div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Item</th><th>Movement</th><th>Quantity</th><th>Requested by</th><th>Reason</th><th>Decision</th></tr></thead><tbody id="movement-requests"><tr><td class="admin-empty" colspan="6">Loading requests…</td></tr></tbody></table></div></section>
+      </div>
+    </main>
+    <footer class="site-footer"><a class="wordmark shine-wordmark" href="index.html">SHINE <span>with mine</span></a><span>Private shop administration</span><a href="mailto:ochiengreagan244@gmail.com">Contact the shop</a></footer>
+  </body>
+</html>

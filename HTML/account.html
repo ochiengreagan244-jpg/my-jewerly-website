@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f8f6f1" />
+    <meta name="description" content="Approved customer account for Shine with mine." />
+    <title>Your account — Shine with mine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="account.js" defer></script>
+  </head>
+  <body class="admin-page">
+    <header class="admin-topbar"><a class="wordmark shine-wordmark" href="index.html">SHINE <span>with mine</span></a><div class="admin-topbar-actions"><a class="auth-back" href="index.html">View shop ↗</a><button class="auth-quiet-link" id="account-signout" type="button">Sign out</button></div></header>
+    <main class="admin-content">
+      <section class="admin-greeting"><div><p class="eyebrow">Your account · GPO Town</p><h1 id="customer-greeting">Your account</h1><p>Request an inventory movement and follow its approval status.</p></div></section>
+      <p class="admin-status" id="account-status" role="status" aria-live="polite">Checking your account…</p>
+      <div class="account-workspace" id="account-workspace" hidden>
+        <section class="admin-section" aria-labelledby="movement-form-title"><div class="admin-section-heading"><div><h2 id="movement-form-title">Request a stock movement</h2><p>Every request is reviewed by the shop admin before stock changes.</p></div></div><form class="movement-form" id="movement-form"><label for="movement-item">Inventory item</label><select id="movement-item" name="itemName" required><option value="">Choose an item</option></select><label for="movement-direction">Movement</label><select id="movement-direction" name="direction" required><option value="in">Stock coming in</option><option value="out">Stock going out</option></select><label for="movement-quantity">Quantity</label><input id="movement-quantity" name="quantity" type="number" min="1" max="10000" step="1" required value="1" /><label for="movement-reason">Reason</label><input id="movement-reason" name="reason" type="text" maxlength="500" required placeholder="Add a short reason" /><button class="button button-dark" type="submit">Send for approval <span aria-hidden="true">→</span></button></form></section>
+        <section class="admin-section" aria-labelledby="my-movements-title"><div class="admin-section-heading"><div><h2 id="my-movements-title">Your requests</h2><p>Stock changes only after an admin decision.</p></div></div><div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Item</th><th>Movement</th><th>Quantity</th><th>Reason</th><th>Status</th><th>Requested</th></tr></thead><tbody id="my-movements"><tr><td class="admin-empty" colspan="6">Loading your requests…</td></tr></tbody></table></div></section>
+      </div>
+    </main>
+    <footer class="site-footer"><a class="wordmark shine-wordmark" href="index.html">SHINE <span>with mine</span></a><span>Questions? <a href="mailto:ochiengreagan244@gmail.com">Contact the shop</a></span><a href="tel:+254710350379">0710 350 379</a></footer>
+  </body>
+</html>
